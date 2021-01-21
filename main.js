@@ -1628,7 +1628,7 @@ var InvoiceComponent = /** @class */ (function () {
                 _this.msg = "No invoice found";
             }
         });
-        console.log("this.arrFiles");
+        console.log("this.arrFiles version c2");
         console.log(this.arrFiles);
     };
     InvoiceComponent.prototype.setYear = function (year) {
