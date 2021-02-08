@@ -1872,13 +1872,13 @@ var environment = {
     okta: {
         client: {
             clientId: '0oaodn0uypuOQbQKl0h7',
-            redirectUri: 'http://localhost:4200/auth/callback',
+            redirectUri: 'https://esipdev.essilorpro.es/auth/callback',
             url: 'https://dev-377877.oktapreview.com',
             issuer: 'default',
         },
         oidc: {
             clientId: '0oaodn0uypuOQbQKl0h7',
-            redirectUrl: 'http://localhost:4200/auth/callback',
+            redirectUrl: 'https://esipdev.essilorpro.es/auth/callback',
             issuer: 'https://dev-377877.oktapreview.com/oauth2/default',
             scopes: 'openid profile email',
             oidc: true,
