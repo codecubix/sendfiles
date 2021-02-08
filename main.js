@@ -1581,10 +1581,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var InvoiceComponent = /** @class */ (function () {
-    function InvoiceComponent(apiService, datePipe) {
+    function InvoiceComponent(apiService, datePipe, zone) {
         this.apiService = apiService;
         this.datePipe = datePipe;
+        this.zone = zone;
         this.arrFiles = [];
         this.arrFiltered = [];
     }
@@ -1627,6 +1629,9 @@ var InvoiceComponent = /** @class */ (function () {
             else {
                 _this.msg = "No invoice found";
             }
+            _this.zone.run(function () {
+                console.log('enabled time travel');
+            });
         });
         console.log("this.arrFiles");
         console.log(this.arrFiles);
@@ -1654,7 +1659,7 @@ var InvoiceComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./invoice.component.html */ "./src/app/invoice/invoice.component.html"),
             styles: [__webpack_require__(/*! ./invoice.component.scss */ "./src/app/invoice/invoice.component.scss")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_api_service__WEBPACK_IMPORTED_MODULE_2__["ApiService"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["DatePipe"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_api_service__WEBPACK_IMPORTED_MODULE_2__["ApiService"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["DatePipe"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"]])
     ], InvoiceComponent);
     return InvoiceComponent;
 }());
@@ -1867,13 +1872,13 @@ var environment = {
     okta: {
         client: {
             clientId: '0oaodn0uypuOQbQKl0h7',
-            redirectUri: 'https://esipdev.essilorpro.es/auth/callback',
+            redirectUri: 'http://localhost:4200/auth/callback',
             url: 'https://dev-377877.oktapreview.com',
             issuer: 'default',
         },
         oidc: {
             clientId: '0oaodn0uypuOQbQKl0h7',
-            redirectUrl: 'https://esipdev.essilorpro.es/auth/callback',
+            redirectUrl: 'http://localhost:4200/auth/callback',
             issuer: 'https://dev-377877.oktapreview.com/oauth2/default',
             scopes: 'openid profile email',
             oidc: true,
